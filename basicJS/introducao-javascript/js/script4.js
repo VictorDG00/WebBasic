@@ -1,4 +1,5 @@
 let pacientes = document.querySelectorAll(".paciente"); //pega todos os paciente da tabela
+let num = pacientes.length; //numero de paciente
 let titulo = document.querySelector(".teste1"); //pega a tag titulo
 let addPaciente = document.querySelector("#adicionar-paciente"); //pega id do botão de adicionar
 let carregarImc = document.querySelector(".carregarImc");
@@ -22,15 +23,12 @@ addPaciente.addEventListener("click", function (){
   let gorduraTd = document.createElement("td");
   gorduraTd.classList.add("info-gordura");
   let imcTd = document.createElement("td");
-  imcTd.classList.add("info-imc");
-
 
   nomeTd.textContent = name;
   pesoTd.textContent = peso;
   alturaTd.textContent = altura;
   gorduraTd.textContent = gordura;
-  imcTd.textContent = 0;
-  
+
   pacienteTr.appendChild(nomeTd);
   pacienteTr.appendChild(pesoTd);
   pacienteTr.appendChild(alturaTd);
@@ -42,8 +40,7 @@ addPaciente.addEventListener("click", function (){
 });
 
 
-function calculoimc(){
-  let num = pacientes.length; //numero de paciente  
+function calculoimc(){  
   for(let i = 0; i < num; i++){ //loop para calculo do imc
     let paciente = pacientes[i];
     let pesoEValida = true;
